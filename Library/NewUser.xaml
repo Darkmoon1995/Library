@@ -1,0 +1,70 @@
+﻿<Window x:Class="LibraryTRY3.Library.NewUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryTRY3.Library"
+        xmlns:randomusercontrol="clr-namespace:LibraryTRY3.RandomUsercontrol"
+        mc:Ignorable="d"
+        Title="NewUser" Height="450" Width="800"
+        WindowStyle="None" >
+    <Grid  Background="#36393e">
+        <randomusercontrol:MainMenuItem x:Name="MainMenu" TitleMainName="New User" Grid.ColumnSpan="2"/>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+        <StackPanel >
+            
+            <Label Content="UserName*: " Margin="5" FontSize="15"/>
+            <randomusercontrol:BetterTextbox x:Name="Username" Margin="5" Placeholder="Masih AhmadiFard"/>
+            <Label Content="Number*: " Margin="5" FontSize="15"/>
+            <randomusercontrol:BetterTextbox x:Name="Number" Margin="5" Placeholder="+98 XXX XXX XXXX"/>
+            <Label Content="Class*: " Margin="5" FontSize="15"/>
+            <randomusercontrol:BetterTextbox x:Name="Class" Margin="5" Placeholder="11/Riyazi/2"/>
+                <StackPanel Orientation="Horizontal">
+                     <Button Name="AddingANewUser" Content="ADD" Width="80" Height="40" Margin="5" Click="AddingANewUser_Click"/>
+                    <Button Name="ResetingTheBetterTextbox" Content="Reset The Box" Width="80" Height="40" Margin="5" Click="ResetingTheBetterTextbox_Click"/>
+                    <Button Name="RemovingUser" Content="Remove" Width="60" Height="40" Margin="5" Foreground="Red" Click="RemovingUser_Click"/>
+                </StackPanel>
+                <Label Content="Search For User: " Margin="5" FontSize="15"/>
+                <StackPanel Orientation="Horizontal">
+                    <randomusercontrol:BetterTextbox x:Name="SearchingBetterTextBlock" Margin="5" Width="170" Placeholder="Masih AhmadiFard"/>
+                    <Button Content="Search" Name="SearchingForUserDetail" Width="60" Height="40" Margin="5" Click="SearchingForUserDetail_Click"/>
+                </StackPanel>
+                <ComboBox Name="SearchUsersComboBox" Margin="5" SelectionChanged="SearchUsersComboBox_SelectionChanged"/>
+            </StackPanel>
+        </ScrollViewer>
+        <ScrollViewer  Grid.Row="1" Grid.Column="0" >
+            <StackPanel Name="UserBooksDetailStackPanel">
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="GiveBack" Width="80" Height="40" Content="Give Back" Click="GiveBack_Click"/>
+                    <Border Background="Aqua"  BorderThickness="2" BorderBrush="Black" Margin="5">
+                        <TextBlock Padding="5" FontSize="16" Text="UserName" Background="White" Foreground="Black" Width="88" Height="40"/>
+                    </Border>
+                    <Border Background="Aqua"  BorderThickness="2" BorderBrush="Black" Margin="5">
+                        <TextBlock Padding="5" FontSize="13" Text="NameOfBook" Background="White" Width="88" Height="40"/>
+                    </Border>
+                    <Border Background="Aqua"  BorderThickness="2" BorderBrush="Black" Margin="5">
+                        <TextBlock Background="White" Width="88" Height="40">
+                            Data Of Book <LineBreak/>
+                            Given
+                        </TextBlock>
+                    </Border>
+                    <Border Background="Aqua"  BorderThickness="2" BorderBrush="Black" Margin="5">
+                        <TextBlock Background="White" Width="88" Height="40">
+                            Data Of Book <LineBreak/>
+                            Given Back
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>

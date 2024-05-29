@@ -1,0 +1,61 @@
+﻿<Window x:Class="LibraryTRY3.Library.Bookdetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:randomusercontrol="clr-namespace:LibraryTRY3.RandomUsercontrol"
+        xmlns:local="clr-namespace:LibraryTRY3.Library"
+        mc:Ignorable="d"
+        Title="Bookdetails" Height="450" Width="800"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown_1">
+    <Grid Background="#36393e">
+        <!-- Ensure MainMenuItem is placed correctly within your layout -->
+        <randomusercontrol:MainMenuItem TitleMainName="Books Detail" Grid.ColumnSpan="2"/>
+
+        <!-- ComboBox And The right Side of Everything -->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="Search Name of the book You want: " Foreground="White"/>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <randomusercontrol:BetterTextbox x:Name="SearchBox" Placeholder="Search Name Of book " Margin="5" Height="40" Width="200"/>
+                <Button Name="SearchOfBooksBtn" Content="Search" Width="50" Click="SearchOfBooksBtn_Click"/>
+            </StackPanel>
+            <ComboBox Name="SearchingBooksComboBox" Margin="5" IsTextSearchEnabled="True" TextSearch.TextPath="Name" SelectionChanged="SearchingBooksComboBox_SelectionChanged"/>
+            <Label Content="What column Do You want To search: " Foreground="White"/>
+            <ComboBox Name="SubjectChoosen" Margin="5">
+                <ComboBoxItem Content="ID"/>
+                <ComboBoxItem Content="name"/>
+                <ComboBoxItem Content="Location"/>
+                <ComboBoxItem Content="TakenBy"/>
+                <ComboBoxItem Content="author"/>
+                <ComboBoxItem Content="The year of publication"/>
+                <ComboBoxItem Content="UserAdminAdded"/>
+                <ComboBoxItem Content="Publisher"/>
+            </ComboBox>
+            <!-- Name Of The book -->
+            <CheckBox Name="IsTheBookTaken" Content="Is It Taken (default = null) " Foreground="White" Margin="5"/>
+            <Label Content="Name Of The book You Want:" Foreground="White"/>
+            <TextBlock Name="NameOfBookTextBlock" Foreground="Black" Margin="5" Background="LightGray"/>
+            <!-- Books Taken By -->
+            <Label Content="Taken By: " Foreground="White"/>
+            <TextBlock Name="TakenByTextBlock" Foreground="Black" Margin="5" Background="LightGray"/>
+            <!-- Publisher Of The book -->
+            <Label Content="Publisher: " Foreground="White"/>
+            <TextBlock Name="PublisherTextBlock" Foreground="Black" Margin="5" Background="LightGray"/>
+            <!-- Author Of The book -->
+            <Label Content="Author: " Foreground="White"/>
+            <TextBlock Name="AuthorTextBlock" Foreground="Black" Margin="5" Background="LightGray"/>
+        </StackPanel>
+        <Grid Name="library2D" Grid.Row="1" Grid.Column="0">
+            <randomusercontrol:_2Dlibrary Grid.Row="1" Grid.Column="0" Margin="5"/>
+        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>

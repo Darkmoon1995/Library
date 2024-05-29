@@ -1,0 +1,46 @@
+﻿<Window x:Class="LibraryTRY3.Library.ChangeLibrary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryTRY3.Library"
+                xmlns:randomusercontrol="clr-namespace:LibraryTRY3.RandomUsercontrol"
+
+        mc:Ignorable="d"
+        Title="ChangeLibrary" Height="450" Width="800"
+        WindowStyle="None">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Background="#36393e">
+        <randomusercontrol:MainMenuItem Grid.ColumnSpan="2" TitleMainName="ChangeLibrary 2D"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="Context"/>
+
+            <randomusercontrol:BetterTextbox x:Name="NameContext" Margin="5" Placeholder="The Name"/>
+
+            <Label Content="Row Location"/>
+            <randomusercontrol:BetterTextbox x:Name="RowLocation" Margin="5" Placeholder="1"/>
+            <Label Content="column Location"/>
+
+            <randomusercontrol:BetterTextbox x:Name="columnLocation" Margin="5" Placeholder="1"/>
+            <Button Name="RemoveItem" Width="80" Height="40" Margin="5" Content="Remove"/>
+            <Button Name="AddItem" Width="80" Height="40" Margin="5" Content="Add" Click="AddItem_Click"/>
+            <Button Name="RemoveAll" Width="80" Height="40" Margin="5" Content="RemoveAll" Click="RemoveAll_Click"/>
+            
+        </StackPanel>
+        <randomusercontrol:_2Dlibrary Grid.Row="1" Grid.Column="0" x:Name="library2DControl"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+    </Grid>
+    
+</Window>
